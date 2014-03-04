@@ -1,0 +1,21 @@
+-- XMonad configurations by Thuan Nguyen @ LLS
+-- Author: Thuan Nguyen
+-- System: FreeBSD 10
+-- Plugins: xmobar, dzen.
+
+
+import XMonad
+
+-- Terminal
+-- Specify terminal program
+myTerminal      = "urxvt"
+
+-- ModKey
+-- Specify modify keys
+myModKey        = mod4Mask -- Window key or Super_L
+
+main = xmonad defaultConfig
+    { terminal      = myTerminal
+    , modMask       = myModKey
+    , borderWidth   = 3
+    }
