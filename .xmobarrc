@@ -1,6 +1,6 @@
 Config { font = "-*-terminus-medium-r-*-*-*-*-*-*-*-*-*-*"
         , bgColor = "#121212"
-        , fgColor = "#2e3436"
+        , fgColor = "#d8d8d8"
         , position = Top
         , lowerOnStart = False
         , commands = [ Run Weather "EDDS" ["-t","<tempF>F","-L","40","-H","80","--high","red","--low","#3333FF"] 36000

@@ -12,7 +12,7 @@
 #Set Wallpaper
 #feh --bg-fill ~/Pics/tc.png &
 #feh --bg-tile ~/GNUstep/Library/AfterStep/non-configurable/0_background &
-feh --bg-fill ~/.wallpapers/dog_landscape.jpg &
+feh --bg-fill ~/.wallpapers/Audi_R8_Tail.jpg &
 
 #URxvt daemon
 urxvtd -q -o -f
