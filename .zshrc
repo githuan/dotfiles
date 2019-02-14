@@ -1,1 +1,0 @@
-/home/nguyent/.zprezto/runcoms/zshrc
