@@ -135,6 +135,9 @@ if $TERM == "xterm-256color" || $TERM == "screen-256color" || $COLORTERM == "gno
   set t_Co=256
 endif
 
+" Set background color
+set background=dark
+
 " Set vim color
 colorscheme gruvbox
 
