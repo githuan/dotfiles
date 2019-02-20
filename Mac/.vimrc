@@ -18,15 +18,19 @@ Plug 'chemzqm/denite-extra'
 Plug 'easymotion/vim-easymotion'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'heracek/HTML-AutoCloseTag'
+Plug 'inside/vim-search-pulse'
 Plug 'itchyny/lightline.vim'
 Plug 'godlygeek/tabular'
 Plug 'justinmk/vim-dirvish'
 Plug 'justinmk/vim-sneak'
+Plug 'lilydjwg/colorizer'
+Plug 'luochen1990/rainbow'
 Plug 'mattn/emmet-vim'
 Plug 'mhinz/vim-signify'
 Plug 'mhinz/vim-startify'
 Plug 'morhetz/gruvbox'
 Plug 'nathanaelkane/vim-indent-guides'
+Plug 'RRethy/vim-illuminate'
 Plug 'sheerun/vim-polyglot'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'tpope/vim-eunuch'
@@ -49,7 +53,7 @@ Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 "Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
 
 " Plugin outside ~/.vim/plugged with post-update hook
-Plug 'junegunn/rainbow_parentheses.vim', { 'dir': '~.vim/plugged/rainbow_parentheses.vim', 'do': './install --all' }
+"Plug 'junegunn/rainbow_parentheses.vim', { 'dir': '~/.vim/plugged/rainbow_parentheses.vim', 'do': './install --all' }
 
 " Initialize plugin system
 call plug#end()
@@ -80,6 +84,12 @@ let g:NERDTreeDirArrowExpandable = '▸'
 let g:NERDTreeDirArrowCollapsible = '▾'
 " Keybinding for NERDTree
 map <C-t> :NERDTreeToggle<CR>
+
+" Vim-Illuminate config ------------------
+hi link illuminatedWord Visual
+
+" Vim-Search Pulse config
+let g:vim_search_pulse_duration = 200
 
 " Easymotion config ----------------------
 let g:EasyMotion_do_mapping = 0 " Disable default mappings
@@ -117,20 +127,10 @@ let g:syntastic_check_on_wq = 0
 nmap <silent> <C-k> <Plug>(ale_previous_wrap)
 nmap <silent> <C-j> <Plug>(ale_next_wrap)
 
-" Rainbow Parentheses config --------------
-" Activation based on file type
-augroup rainbow_lisp
-  autocmd!
-  autocmd FileType lisp,clojure,scheme RainbowParentheses
-augroup END
+" Rainbow Parentheses config -------------
+let g:rainbow_active = 1
 
-" Activation based on file type
-augroup rainbow_lisp
-  autocmd!
-  autocmd FileType lisp,clojure,scheme RainbowParentheses
-augroup END
-
-" Setup term color support
+" Setup term color support ---------------
 if $TERM == "xterm-256color" || $TERM == "screen-256color" || $COLORTERM == "gnome-terminal"
   set t_Co=256
 endif
