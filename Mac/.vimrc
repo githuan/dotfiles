@@ -187,6 +187,15 @@ imap <M-Left> <ESC><c-w>h
 imap <M-Up> <ESC><c-w>k
 imap <M-Down> <ESC><c-w>j
 
+" Lines and Numbers ---------------
+set cursorline
+
+" Enable line numbers
+set nu
+
+" Enable relative numbers
+set relativenumber
+
 " old autocomplete keyboard shortcut
 imap <C-J> <C-X><C-O>
 
