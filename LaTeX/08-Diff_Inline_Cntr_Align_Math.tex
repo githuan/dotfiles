@@ -1,0 +1,36 @@
+\documentclass{article}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+
+\begin{document}
+\title{My Eighth \LaTeX{} Document - MATH: In-line, Center, Align}
+\author{Thuan Q. Nguyen}
+\maketitle
+
+% In-line uses single dollar sign "$"
+% Centered maths use double dollar signs "$$"
+% Align (Also, Align* in previous lession) has no dollar sign
+
+This is a fraction is in-line; uses single dollar sign "\$". \\
+$\dfrac{x^2}{x^3}$ = $\dfrac{1}{x}$ \\
+
+These are integrals; uses double dollar signs "\$\$" to centered text. $$\int_{a}^{b}f(x)dx$$ \\
+
+Align with steps on the right. \\
+\begin{align}
+    \frac{x^2}{x^3} &= \frac{1}{x} \\
+    \sqrt{16} &=4 \\
+    \int_{a}^{b}f(x)dx &= 5x^3 + x^2 \\
+    x &=\frac{-b \pm \sqrt{b^24ac}}{2a} \\
+\end{align}
+
+Align without steps on the right. \\
+\begin{align*}
+    \frac{x^2}{x^3} &= \frac{1}{x} \\
+    \sqrt{16} &=4 \\
+    \int_{a}^{b}f(x)dx &= 5x^3 + x^2 \\
+    x &=\frac{-b \pm \sqrt{b^24ac}}{2a}
+\end{align*}
+\end{document}

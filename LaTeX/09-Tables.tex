@@ -1,0 +1,26 @@
+\documentclass{article}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+
+\begin{document}
+\title{My Ninth \LaTeX{} Document - Tables}
+\author{Thuan Q. Nguyen}
+\maketitle
+
+% tabular environment creates tables
+% & means "line up here"
+% \\ means "line break here"
+
+Let's take the function $f(x) = \sqrt{x^2+1}$ and make a table of values.
+
+\begin{center}
+\begin{tabular}{r|cccc}
+$x$       &  -1 & 0 & 1 & 2 \\
+\hline
+$f(x)$    & $\sqrt{2}$ & 1 & $\sqrt{2}$ & $\sqrt{5}$
+\end{tabular}
+\end{center}
+
+\end{document}
