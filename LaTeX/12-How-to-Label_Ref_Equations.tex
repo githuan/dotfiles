@@ -1,0 +1,29 @@
+\documentclass{article}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+
+\begin{document}
+\title{My Twelveth \LaTeX{} Document - Label and Referencing}
+\author{Thuan Q. Nguyen}
+\maketitle
+
+% \label to name a label
+% \ref to reference back to the label
+
+Solve the equation $0 = 3x^3+3x^2-6x$.
+
+\begin{align}
+	0 &= 3x^3+3x^2-6x 	\\
+	&= 3(x^3 +x^2-2x) 	\label{three} 		\\
+	&= 3x(x2^2+x-2)	\label{x} 			\\
+	&= 3x(x+2) (x-1)	\label{factorpoly} 	\\
+	& \therefore 		\nonumber		\\
+	x &= 0, -2, 1
+\end{align}
+
+In step (\ref{three}) I factored out a three. In step (\ref{x}) I factored out an $x$, and in step (\ref{factorpoly}) I factored the polynomial.
+
+
+\end{document}

@@ -1,0 +1,40 @@
+\documentclass{article}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+
+\begin{document}
+\title{My Fifth \LaTeX{} Document - MATH: Using the Align Environment}
+\author{Thuan Q. Nguyen}
+\maketitle
+
+% Align for equation numbering
+% Align* for no equation numbering
+% & means "line up here"
+% \\ means "line break"
+% \therefore (A special Math sign)
+
+Solve the equation $0 = 3x^3+3x^2-6x$.
+
+\begin{align}
+	0 &= 3x^3+3x^2-6x \\
+	&= 3(x^3 +x^2-2x) \\
+	&= 3x(x2^2+x-2) \\
+	&= 3x(x+2) (x-1) \\
+	& \therefore \\
+	x &= 0, -2, 1
+\end{align}
+
+Put star sign "\textbf*" in \{align\textbf*\} option will not show the steps:
+
+\begin{align*}
+	0 &= 3x^3+3x^2-6x \\
+	&= 3(x^3 +x^2-2x) \\
+	&= 3x(x2^2+x-2) \\
+	&= 3x(x+2) (x-1) \\
+	& \therefore \\
+	x &= 0, -2, 1
+\end{align*}
+
+\end{document}

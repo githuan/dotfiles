@@ -1,0 +1,33 @@
+\documentclass{article}
+\usepackage{tikz}
+\begin{document}
+\usetikzlibrary{calc}
+
+\def\Earth#1#2{ % 1: pos, 2: size
+\draw (#1) node[left color=blue!20!cyan, right color=blue!80!black, circle, minimum size=#2cm, inner sep=0pt] (Earth) {};
+}
+
+\def\Moon#1#2{ %1: pos, 2: size
+\draw (#1) node[left color=black!10, right color=black!50, circle, minimum size=#2cm, inner sep=0pt] (Moon) {};
+}
+
+\begin{tikzpicture}
+\fill[black] (0,0) rectangle (8,6);
+\Earth{1,1}{0.8};
+\Moon{5,4}{0.4};
+
+\foreach \i in {1,...,35} {
+  \pgfmathsetmacro{\tint}{\i*100/35};
+  \draw[thick, red!\tint!yellow] (Moon) circle(0.2+\i/20);
+}
+\foreach \i in {1,...,35} {
+  \pgfmathsetmacro{\a}{-\i/2};
+  \draw[ultra thick, black] (Earth.\a) .. controls +(2,0-\i/20) and +(-3+\i/20,0) .. ($(Moon)+(-90:0.2+\i/20)$);
+}
+\foreach \i in {1,...,35} {
+  \pgfmathsetmacro{\tint}{\i*100/35};
+  \pgfmathsetmacro{\a}{-\i/2};
+  \draw[thick, red!\tint!yellow] (Earth.\a) .. controls +(2,0-\i/20) and +(-3+\i/20,0) .. ($(Moon)+(-90:0.2+\i/20)$);    
+}
+\end{tikzpicture}
+\end{document}

@@ -91,6 +91,10 @@ hi link illuminatedWord Visual
 " Vim-Search Pulse config
 let g:vim_search_pulse_duration = 200
 
+" Draw a line at 80 characters limits
+let &colorcolumn=join(range(81,999),",")
+let &colorcolumn="80,".join(range(400,999),",")
+
 " Easymotion config ----------------------
 let g:EasyMotion_do_mapping = 0 " Disable default mappings
 
