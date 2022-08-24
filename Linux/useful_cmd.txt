@@ -1,0 +1,8 @@
+# Get audio output interfaces
+pactl list sinks |& grep -E "Sink|Port|analog-output"
+
+# Set audio output interface
+# for headphones
+pactl set-sink-port 49 analog-output-headphones
+# for speakers
+pactl set-sink-port 49 analog-output-speaker
