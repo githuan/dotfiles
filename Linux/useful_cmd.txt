@@ -6,3 +6,13 @@ pactl list sinks |& grep -E "Sink|Port|analog-output"
 pactl set-sink-port 49 analog-output-headphones
 # for speakers
 pactl set-sink-port 49 analog-output-speaker
+
+# Ruby on rails "pg missing issue"
+# 1. Install postgresql14-devel package:
+sudo dnf install postgresql14-devel
+# 2. Log on rails app folder:
+cd workspace/RAILS_APP
+# 3. Set build.pg to postgresql14 pg_config path:
+bundle config build.pg --with-pg-config=/usr/pgsql-14/bin/pg_config
+# 4. Run bundle install again:
+bundle install
