@@ -16,3 +16,15 @@ cd workspace/RAILS_APP
 bundle config build.pg --with-pg-config=/usr/pgsql-14/bin/pg_config
 # 4. Run bundle install again:
 bundle install
+
+# Set user and password for rails database
+EDITOR=emacs rails credentials:edit
+
+database:
+  username: pguser
+  password: <your_db_password>
+
+# Add following to config/database.yml file
+  username: <%= Rails.application.credentials.database[:username] %>
+  password: <%= Rails.application.credentials.database[:password] %>
+  host: localhost
