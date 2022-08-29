@@ -83,6 +83,22 @@ output * bg $HOME/.config/sway/bg/pexels-esranur-kalay-7907548.jpg fill
 
     # Exit sway (logs you out of your Wayland session)
     bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
+
+    # Apple keyboard
+    bindsym --locked XF86MonBrightnessUp exec light -T 1.4
+    bindsym --locked XF86MonBrightnessDown exec light -T 0.72
+    bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5%
+    bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5%
+    bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
+    bindsym XF86AudioMicMute exec pactl set-source-mute @DEFAULT_SOURCE@ toggle
+    # bindsym XF86MonBrightnessDown exec brightnessctl set 5%-
+    # bindsym XF86MonBrightnessUp exec brightnessctl set 5%+
+    bindsym XF86AudioPlay exec playerctl play-pause
+    bindsym XF86AudioNext exec playerctl next
+    bindsym XF86AudioPrev exec playerctl previous
+    bindsym XF86Search exec $menu
+
+
 #
 # Moving around:
 #
@@ -197,7 +213,7 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 # Add custom font
-font pango:'Iosevka Term' Medium 7
+font pango:'Iosevka Term' Medium 14
 
 # Gaps
 # A 10-pixel border around every window.
@@ -205,6 +221,17 @@ gaps inner 1
 
 # Removes the title bar of each window.
 default_border pixel 2
+
+# Sway Idle Settings
+exec swayidle -w \
+  timeout 600 'swaylock -f' \
+  timeout 300 'swaymsg "output * dpms off"' \
+  resume 'swaymsg "output * dpms on"' \
+  before-sleep 'playerctl pause' \
+  before-sleep 'swaylock -c 50000'
+# Manual lock
+set $lockman exec bash ~/.config/sway/lockman.sh
+bindsym $mod+space+l exec $lockman
 
 #
 # Status Bar:
