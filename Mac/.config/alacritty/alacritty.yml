@@ -49,6 +49,7 @@ font:
   size: 14.0
 
   # Better font rendering for mac
+  AppleFontSmoothing: true
 
 # If `true`, bold text is drawn using the bright color variants.
 draw_bold_text_with_bright_colors: true
